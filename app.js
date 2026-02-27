@@ -22,14 +22,15 @@ app.use(passRoute);
 
 
 
-const DB_PATH = 'mongodb+srv://lakshay9763:fbic1412@cluster0.df3xv84.mongodb.net/Passes?retryWrites=true&w=majority';
+const DB_PATH = process.env.DB_PATH;
 
+const PORT = process.env.PORT || 3000
 
 
 mongoose.connect(DB_PATH).then(()=>{
     console.log("Connection to Mongo Successfull...")
 
-     app.listen(3000, "0.0.0.0", (err) => {
+     app.listen(PORT, "0.0.0.0", (err) => {
        console.log("Server is running ...")
      })
 
