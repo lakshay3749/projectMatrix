@@ -5,7 +5,7 @@ const fetch = require("node-fetch")
 
 const { getIO, getGuardSocketId } = require('../socket')
 const customAlphabet = require('nanoid').customAlphabet
-const admin = require('../firebase')
+const admin = require('../firebase.js')
 
 cloudinary.config({
   cloud_name: "dd5pdy82n",
