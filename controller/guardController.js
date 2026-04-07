@@ -58,7 +58,7 @@ exports.updateLocationStatusController = async (req, res, next) => {
                    { $push: { notifList: { name, category, entryTime } } }
                );
 
-             cout
+             console.log(ret)
              
 
 
