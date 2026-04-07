@@ -53,7 +53,7 @@ const worker2ResidentSchema = new mongoose.Schema({
   residentList: [
     {
       residentId: { type: String, required: true },
-      fcmToken: { type: String, required: true }
+      
     }
   ]
 });
