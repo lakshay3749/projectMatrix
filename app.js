@@ -25,12 +25,26 @@ app.use(cors());
 // app.use(vehicleRoute)
 // app.use(homeRoute)  
 
+app.get("/wakeUp", (req, res) => {
+  const message = req.query.message || "No message provided";
+  console.log("Wake-up ping received:", message);
+
+  res.status(200).json({
+    status: "success",
+    message: "Server is awake!",
+    received: message,
+    timestamp: new Date().toISOString(),
+  });
+});
+
 
 app.use(passRoute);
 
 app.use(residentRoute) // opening resident route 
 
 app.use('/guard',guardRoute)
+
+
 
 
 
