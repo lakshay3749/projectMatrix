@@ -2,7 +2,7 @@
 const { Passes, Passes_Info,PersonalStaff } = require('../model/passModel');
 const {Worker2Resident,ResidentNotifications} = require('../model/residentModel')
 
-const admin = require('../firebase');
+const admin = require('../firebase.js');
 const e = require('cors');
 
 
