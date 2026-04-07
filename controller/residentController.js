@@ -155,12 +155,15 @@ exports.sendPushNot2ResidentController = async (req,res,next)=>{
   
  const respon = await request.save()
 
+ const resident = await Resident.findOne({residentId})
+
+
 
 
  console.log(respon,"New Request saved to db")
 
   const rest = await admin.messaging().send({
-  token: "eo5ZKWNgQrSV51FzcEG8eK:APA91bFYllXr6dzbUWbZ7Wk6InST8OxlI4NaGviLX9W1tHWtWnK0kd84MdR9U03FoeeRf9lf9LwbKwNTDxxGUfmyT0XzesJ-vbgWax4eVv4vG83THPd2Crg",
+  token: resident.fcmToken,
   notification: {
     title: "Gate Alert",
     body: "Visitor arrived"
