@@ -54,10 +54,12 @@ exports.updateLocationStatusController = async (req, res, next) => {
              const token = resident.fcmToken
 
              const ret=  await ResidentNotifications.updateOne(
-                   { residentId},
+                   { residentId :"RES-B204"},
                    { $push: { notifList: { name, category, entryTime } } }
                );
-              
+
+             cout
+             
 
 
             const rest = await admin.messaging().send({
