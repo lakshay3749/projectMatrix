@@ -100,10 +100,10 @@ exports.authResidentController = async (req,res,next)=>{
         else{
             
      
-        resident.fcmToken = token
-
-        const data = await resident.save()
-        console.log(data)
+        const data =  await Resident.updateOne(
+  { residentId },
+  { $set: { fcmToken: token } }
+)
 
         res.status(200).json(data)
 
