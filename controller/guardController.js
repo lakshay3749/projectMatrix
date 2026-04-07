@@ -48,7 +48,7 @@ exports.updateLocationStatusController = async (req, res, next) => {
             const {residentId} = element
 
              const resident = await Resident.findOne({
-               residentId:"Res-B402"
+               residentId
              })
 
              const token = resident.fcmToken
