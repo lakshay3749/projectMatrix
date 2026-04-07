@@ -104,8 +104,9 @@ exports.authResidentController = async (req,res,next)=>{
   { residentId },
   { $set: { fcmToken: token } }
 )
+          const rest = await Resident.findOne({residentId})
 
-        res.status(200).json(data)
+        res.status(200).json(rest)
 
         }
 
